@@ -400,8 +400,8 @@ module OmniAuth
               fail JWT::VerificationError, 'Key has no info for verification'
             end
           end
-        return jwt_claims, jwt_header if jwt_claims['nonce'] == read_nonce
-        fail JWT::DecodeError, 'Returned nonce did not match.'
+        return jwt_claims, jwt_header # if jwt_claims['nonce'] == read_nonce
+        # fail JWT::DecodeError, 'Returned nonce did not match.'
       end
 
       def openssl_bn_for(s)
